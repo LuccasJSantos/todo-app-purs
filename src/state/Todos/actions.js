@@ -1,7 +1,7 @@
-import todosType from './types'
+export const addTodo = (stateRef, title) => {
+  return [...stateRef, { title, done: false }]
+}
 
-export const addTodo = title => ({ type: todosType.addTodo, payload: title })
-
-export const removeTodo = index => ({ type: todosType.removeTodo, payload: index })
-
-export const toggleTodo = index => ({ type: todosType.toggleTodo, payload: index })
+export const removeTodo = (stateRef, index) => {
+  return [...stateRef.slice(0, index), ...stateRef.slice(index + 1)]
+}

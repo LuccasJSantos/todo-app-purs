@@ -1,21 +1,19 @@
 <template>
   <div class="container">
-    <StoreProvider />
+    <Todos />
   </div>
 </template>
 
 <script>
-import StoreProvider from './components/StoreProvider.vue'
+import Todos from '@/components/Todos.vue'
 import './assets/styles.css'
 
 export default {
   name: 'App',
 
   components: {
-    StoreProvider
-  },
-
-  props: ['todos', 'actions']
+    Todos
+  }
 }
 </script>
 

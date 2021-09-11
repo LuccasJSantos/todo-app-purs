@@ -1,7 +1,7 @@
-import Todos from './Todos'
-import { combineReducers, createStore } from 'redux'
+import todos from './Todos'
 
-export default createStore(
-  combineReducers({
-    todos: Todos.reducer
-  }))
+const actions = {
+  todos: todos.actions
+}
+
+export const useStore = (name) => [todos.state, actions[name]]

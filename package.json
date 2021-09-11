@@ -12,9 +12,7 @@
     "@vue/composition-api": "^1.1.5",
     "core-js": "^3.6.5",
     "mdi-vue": "^3.0.7",
-    "redux": "^4.1.1",
-    "vue": "^3.0.0",
-    "vue3-redux": "^0.9.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

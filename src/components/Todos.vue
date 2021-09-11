@@ -1,32 +1,32 @@
 <template>
   <div class="todos-container">
+    <div>
+      <input v-model="inputText" type="text" />
+      <button @click="actions.addTodo(inputText)">Add Todo</button>
+    </div>
     <ul class="list">
-      <li v-for="(todo, index) in todos" :key="index" class="list-item">
+      <li v-for="(todo, index) in todos.value" :key="index" class="list-item">
         <input :id="`todo-toggler-${index}`" type="checkbox" v-model="todo.done" />
         <label :for="`todo-toggler-${index}`">{{todo.title}}</label>
 
-        <mdicon name="delete" class="delete-button" />
+        <mdicon @click="actions.removeTodo(index)" name="delete" class="delete-button" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue'
+import { useStore } from '@/state/store'
+
 export default {
   name: 'Todos',
-  data () {
-    return {
-      todos: [
-        {
-          title: 'Do something',
-          done: false
-        },
-        {
-          title: 'Do other something',
-          done: true
-        }
-      ]
-    }
+
+  setup () {
+    const [todos, actions] = useStore('todos')
+    const inputText = ref('')
+
+    return { actions, todos, inputText }
   }
 }
 </script>
@@ -38,7 +38,9 @@ export default {
   width: 100%;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .list {

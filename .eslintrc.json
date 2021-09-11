@@ -18,5 +18,7 @@
     "plugins": [
         "vue"
     ],
-    "rules": {}
+    "rules": {
+        "arrow-parens": 1
+    }
 }
