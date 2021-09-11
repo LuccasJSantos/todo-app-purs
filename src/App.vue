@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <StoreProvider />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StoreProvider from './components/StoreProvider.vue'
+import './assets/styles.css'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
+    StoreProvider
+  },
+
+  props: ['todos', 'actions']
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #333344;
 }
 </style>
