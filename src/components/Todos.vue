@@ -5,11 +5,11 @@
       <button @click="actions.addTodo(inputText)">Add Todo</button>
     </div>
     <ul class="list">
-      <li v-for="(todo, index) in todosState.value.todos" :key="index" class="list-item">
-        <input :id="`todo-toggler-${index}`" type="checkbox" v-model="todo.done" />
-        <label :for="`todo-toggler-${index}`">{{todo.title}}</label>
+      <li v-for="todo in todosState.value.todos" :key="todo.id" class="list-item">
+        <input :id="`todo-toggler-${todo.id}`" type="checkbox" v-model="todo.done" />
+        <label :for="`todo-toggler-${todo.id}`">{{todo.title}}</label>
 
-        <mdicon @click="actions.removeTodo(index)" name="delete" class="delete-button" />
+        <mdicon @click="actions.removeTodo(todo.id)" name="delete" class="delete-button" />
       </li>
     </ul>
   </div>
