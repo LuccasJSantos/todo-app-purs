@@ -27,3 +27,4 @@ pnpm-debug.log*
 output
 .psc-ide-port
 .purs-repl
+.psci_modules
