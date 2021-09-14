@@ -5,7 +5,7 @@
       <button @click="actions.addTodo(inputText)">Add Todo</button>
     </div>
     <ul class="list">
-      <li v-for="(todo, index) in todos.value" :key="index" class="list-item">
+      <li v-for="(todo, index) in todosState.value.todos" :key="index" class="list-item">
         <input :id="`todo-toggler-${index}`" type="checkbox" v-model="todo.done" />
         <label :for="`todo-toggler-${index}`">{{todo.title}}</label>
 
@@ -23,10 +23,10 @@ export default {
   name: 'Todos',
 
   setup () {
-    const [todos, actions] = useStore('todos')
+    const [todosState, actions] = useStore('todos')
     const inputText = ref('')
 
-    return { actions, todos, inputText }
+    return { actions, todosState, inputText }
   }
 }
 </script>
