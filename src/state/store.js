@@ -1,11 +1,8 @@
+import { combineStates } from './utils'
 import todos from './Todos'
 
-const states = {
-  todos: todos.state
-}
+const store = combineStates ({
+  todos
+})
 
-const actions = {
-  todos: todos.actions
-}
-
-export const useStore = (name) => [states[name], actions[name]]
+export const useStore = (name) => [store[name].state, store[name].actions]

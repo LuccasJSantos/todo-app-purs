@@ -19,6 +19,17 @@
         "vue"
     ],
     "rules": {
-        "arrow-parens": 1
+        "arrow-parens": 1,
+        "func-call-spacing": 0,
+        "indent": [
+            1,
+            2,
+            {
+                "ignoredNodes": [
+                    "CallExpression"
+                ]
+            }
+        ],
+        "no-unexpected-multiline": 0
     }
 }
